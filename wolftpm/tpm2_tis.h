@@ -23,6 +23,10 @@
 #define __TPM2_TIS_H__
 
 
+#define TPM_TIS_HEADER_SZ 4
+
+#define TPM_TIS_READY_MASK 0x01
+
 #ifdef WOLFTPM_TIS
 
 #include <wolftpm/tpm2.h>
@@ -35,10 +39,6 @@
 
 #define TPM_TIS_READ        0x80
 #define TPM_TIS_WRITE       0x00
-
-#define TPM_TIS_HEADER_SZ 4
-
-#define TPM_TIS_READY_MASK 0x01
 
 
 WOLFTPM_LOCAL int TPM2_TIS_GetBurstCount(TPM2_CTX* ctx, word16* burstCount);
