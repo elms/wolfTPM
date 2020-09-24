@@ -196,6 +196,12 @@ then
     AM_CFLAGS="$AM_CFLAGS -DWOLFTPM_SWTPM"
 fi
 
+# TIS device Support
+if test "x$ENABLED_DEVTPM" = "xno" -a "x$ENABLED_SWTPM" = "xno"
+then
+    AM_CFLAGS="$AM_CFLAGS -DWOLFTPM_TIS"
+fi
+
 
 # STM ST33 Support
 AC_ARG_ENABLE([st33],,
@@ -444,6 +450,7 @@ echo "   * System type:               $host_vendor-$host_os"
 echo "   * Host CPU:                  $host_cpu"
 echo "   * C Compiler:                $CC"
 echo "   * C Flags:                   $CFLAGS"
+echo "   * AMC Flags:                 $AM_CFLAGS"
 echo "   * CPP Flags:                 $CPPFLAGS"
 echo "   * Linker Flags:              $LDFLAGS"
 echo "   * LIB Flags:                 $LIB"
