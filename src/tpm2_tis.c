@@ -19,7 +19,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1335, USA
  */
 
-
+#ifdef WOLFTPM_TIS
 #include <wolftpm/tpm2_tis.h>
 
 
@@ -562,3 +562,4 @@ exit:
 /******************************************************************************/
 /* --- END TPM Interface Layer -- */
 /******************************************************************************/
+#endif /* WOLFTPM_TIS */

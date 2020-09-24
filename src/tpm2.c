@@ -309,7 +309,7 @@ TPM_RC TPM2_ChipStartup(TPM2_CTX* ctx, int timeoutTries)
     if (ctx == NULL) {
         return BAD_FUNC_ARG;
     }
-
+#ifdef WOLFTPM_TIS
     rc = TPM2_AcquireLock(ctx);
     if (rc == TPM_RC_SUCCESS) {
 
@@ -328,6 +328,9 @@ TPM_RC TPM2_ChipStartup(TPM2_CTX* ctx, int timeoutTries)
 
         TPM2_ReleaseLock(ctx);
     }
+#else
+    (void)timeoutTries;
+#endif /* WOLFTPM_TIS */
 
     return rc;
 }

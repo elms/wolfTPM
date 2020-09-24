@@ -1608,6 +1608,10 @@ static const BYTE TPM_20_EK_AUTH_POLICY[] = {
     0x0b, 0x64, 0xf2, 0xa1, 0xda, 0x1b, 0x33, 0x14, 0x69, 0xaa,
 };
 
+/* The default locality to use */
+#ifndef WOLFTPM_LOCALITY_DEFAULT
+#define WOLFTPM_LOCALITY_DEFAULT 0
+#endif
 
 
 /* HAL IO Callbacks */

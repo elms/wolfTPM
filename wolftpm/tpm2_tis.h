@@ -22,6 +22,9 @@
 #ifndef __TPM2_TIS_H__
 #define __TPM2_TIS_H__
 
+
+#ifdef WOLFTPM_TIS
+
 #include <wolftpm/tpm2.h>
 #include <wolftpm/tpm2_packet.h>
 
@@ -29,10 +32,6 @@
     extern "C" {
 #endif
 
-/* The default locality to use */
-#ifndef WOLFTPM_LOCALITY_DEFAULT
-#define WOLFTPM_LOCALITY_DEFAULT 0
-#endif
 
 #define TPM_TIS_READ        0x80
 #define TPM_TIS_WRITE       0x00
@@ -57,5 +56,7 @@ WOLFTPM_LOCAL int TPM2_TIS_Read(TPM2_CTX* ctx, word32 addr, byte* result, word32
 #ifdef __cplusplus
     }  /* extern "C" */
 #endif
+
+#endif /* WOLFTPM_TIS */
 
 #endif /* __TPM2_TIS_H__ */
